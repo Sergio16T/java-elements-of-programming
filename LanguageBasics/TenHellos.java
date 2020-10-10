@@ -12,7 +12,7 @@ public class TenHellos {
         int i = 4;
         while (i <= 10) {
             System.out.println(i + "th Hello");
-            i = i + 1; // i++; 
+            i = i + 1; // i++; // i += 1;
         }
 
     }

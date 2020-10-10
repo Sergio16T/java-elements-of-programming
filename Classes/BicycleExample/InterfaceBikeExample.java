@@ -1,4 +1,4 @@
-package BicycleExample;
+package Classes.BicycleExample;
 
 interface BicycleInterface {
     //  wheel revolutions per minute
