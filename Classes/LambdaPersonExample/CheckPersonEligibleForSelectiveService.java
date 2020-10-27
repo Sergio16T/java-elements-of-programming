@@ -1,4 +1,4 @@
-package Classes.PersonExample;
+package Classes.LambdaPersonExample;
 
 class CheckPersonEligibleForSelectiveService implements CheckPerson {
     public boolean test(Person p) {

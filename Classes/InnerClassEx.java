@@ -22,6 +22,16 @@ public class InnerClassEx {
         }
         System.out.println();
     }
+
+    public static Boolean isEvenIndex(Integer index) {
+        return index % 2 == 0; 
+        // if (index % 2 == 0) return Boolean.TRUE; // Can also access True or false via Boolean
+        // return Boolean.FALSE;
+    }
+
+    public static Boolean isOddIndex(Integer index) {
+        return !(index % 2 == 0); 
+    }
     
     interface DataStructureIterator extends java.util.Iterator<Integer> { } 
 
@@ -42,11 +52,11 @@ public class InnerClassEx {
         public Integer next() {
             
             // Record a value of an even index of the array
-            Integer retValue = Integer.valueOf(arrayOfInts[nextIndex]);
+            Integer returnValue = Integer.valueOf(arrayOfInts[nextIndex]);
             
             // Get the next even element
             nextIndex += 2;
-            return retValue;
+            return returnValue;
         }
     }
     
@@ -56,6 +66,7 @@ public class InnerClassEx {
         // values of even indices
         InnerClassEx ds = new InnerClassEx();
         ds.printEven();
+        System.out.println(InnerClassEx.isOddIndex(3));
     }
 }
 //The output is:

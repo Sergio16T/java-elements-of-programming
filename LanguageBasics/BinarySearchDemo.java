@@ -4,7 +4,7 @@ package LanguageBasics;
 //iterative solution 
 public class BinarySearchDemo {
 
-    int binarySearchDemo(int arr[], int x){
+    int binarySearchDemo(int[] arr, int x){ // could also be written (int arr[], int x) however this form is discouraged
         // int[] values = {0, 1, 2, 3, 4, 5, 6 }; 
         int left = 0, right = arr.length -1; 
 
@@ -40,7 +40,7 @@ public class BinarySearchDemo {
 class RecursiveBinarySearch { 
     // Returns index of x if it is present in arr[l.. 
     // r], else return -1 
-    int binarySearch(int arr[], int left, int right, int x) { 
+    int binarySearch(int[] arr, int left, int right, int x) { 
         if (right >= left) { 
             int mid = left + (right - left) / 2; 
   
@@ -81,7 +81,7 @@ class RecursiveBinarySearch {
 class IterativeBinarySearch { 
     // Returns index of x if it is present in arr[], 
     // else return -1 
-    int binarySearch(int arr[], int x) 
+    int binarySearch(int[] arr, int x) 
     { 
         int l = 0, r = arr.length - 1; 
         while (l <= r) { 
@@ -106,7 +106,7 @@ class IterativeBinarySearch {
     } 
   
     // Driver method to test above 
-    public static void main(String args[]) 
+    public static void main(String[] args) 
     { 
         IterativeBinarySearch ob = new IterativeBinarySearch(); 
         int arr[] = { 2, 3, 4, 10, 40 }; 
