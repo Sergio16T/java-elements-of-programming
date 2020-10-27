@@ -1,4 +1,4 @@
-package Classes.Car;
+package Interfaces.Car;
 
 enum Direction {
     RIGHT, LEFT
