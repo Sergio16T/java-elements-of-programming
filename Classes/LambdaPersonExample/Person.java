@@ -2,7 +2,7 @@ package Classes.LambdaPersonExample;
 import java.util.List;
 import java.util.function.Predicate;
 
-// the Predicate interface is a generic interface 
+// the Predicate interface is a generic interface
 // interface Predicate<Person> {
 //     boolean test(Person t);
 // }
@@ -26,14 +26,14 @@ public class Person {
 
     String name;
     Calendar birthday;
-    int age; 
+    int age;
     Sex gender;
     String emailAddress;
-    
+
     public Person(String name, int age, Calendar birthday, Sex gender, String emailAddress) {
         this.name = name;
         this.age = age;
-        this.birthday = birthday; 
+        this.birthday = birthday;
         this.gender = gender;
         this.emailAddress = emailAddress;
     }
@@ -59,16 +59,13 @@ public class Person {
             }
         }
     }
-    public static void processPersons(
-    List<Person> roster,
-    Predicate<Person> tester,
-    Consumer<Person> block) {
+    public static void processPersons(List<Person> roster, Predicate<Person> tester, Consumer<Person> block) {
         for (Person p : roster) {
             if (tester.test(p)) {
                 block.accept(p);
             }
         }
-    }   
+    }
 
     public static void processPersonsWithFunction(
         List<Person> roster,
@@ -86,7 +83,7 @@ public class Person {
     public static int compareByAge(Person a, Person b) {
         return a.birthday.compareTo(b.birthday);
     }
-    
+
     public String getName() {
         return name;
     }
@@ -97,15 +94,15 @@ public class Person {
 
     public int getAge() {
         // ...
-        return this.age; 
+        return this.age;
     }
 
     public void setAge(int age) {
         this.age = age;
     }
- 
+
     public Calendar getBirthday() {
-        return this.birthday; 
+        return this.birthday;
     }
     public void setBirthday(Calendar birthday) {
         this.birthday = birthday;
@@ -125,13 +122,13 @@ public class Person {
         this.emailAddress = emailAddress;
     }
 
-   
+
 }
 
-//because a functional interface contains only one abstract method, 
-//you can omit the name of that method when you implement it. 
+//because a functional interface contains only one abstract method,
+//you can omit the name of that method when you implement it.
 //To do this, instead of using an anonymous class expression, you use a lambda expression
-//examples in myLambdaClass with lambda expressions used on the person class methods: 
+//examples in myLambdaClass with lambda expressions used on the person class methods:
 
  class MyLambdaClass {
   public static void main(String[] args) {
@@ -142,15 +139,15 @@ public class Person {
     // numbers.add(1);
     // numbers.forEach( (n) -> { System.out.println(n); } );
 
-    Calendar birthday = Calendar.getInstance(); 
-    birthday.set(1992, 02, 13, 0, 0); 
+    Calendar birthday = Calendar.getInstance();
+    birthday.set(1992, 02, 13, 0, 0);
 
-    Person demoLambda = new Person("Sergio", 28, birthday, Person.Sex.MALE, "st@gmail.com"); 
-    ArrayList<Person> roster = new ArrayList<Person>(); 
-    roster.add(demoLambda); 
+    Person demoLambda = new Person("Sergio", 28, birthday, Person.Sex.MALE, "st@gmail.com");
+    ArrayList<Person> roster = new ArrayList<Person>();
+    roster.add(demoLambda);
 
     Person.printPersons(
-        roster, 
+        roster,
         new CheckPersonEligibleForSelectiveService()
     );
 
@@ -177,9 +174,9 @@ public class Person {
         );
     // the following example uses aggregate operations to print the e-mail addresses of those members contained in the collection roster who are eligible for Selective Service:
     // Aggregate operations process elements from a stream, not directly from a collection
-    //  A stream is a sequence of elements. Unlike a collection, it is not a data structure that stores elements. 
-    // Instead, a stream carries values from a source, such as collection, through a pipeline. 
-    // A pipeline is a sequence of stream operations, which in this example is filter-map-forEach. 
+    //  A stream is a sequence of elements. Unlike a collection, it is not a data structure that stores elements.
+    // Instead, a stream carries values from a source, such as collection, through a pipeline.
+    // A pipeline is a sequence of stream operations, which in this example is filter-map-forEach.
     roster
         .stream()
         .filter(
