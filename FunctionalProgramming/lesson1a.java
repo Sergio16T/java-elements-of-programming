@@ -55,16 +55,19 @@ type itself, rather than to an instance of that type. This means that only one i
 member is created which is shared across all instances of the class.
 
 
-* Protected Keyword
+* protected Keyword
 - The protected keyword is an access modifier used for attributes, methods and constructors, making them
 accessible in the same package and subclasses.
 - specifies that the member can only be accessed within its own package (as with package-private) and,
 in addition, by a subclass of its class in another package.
 
-* Public Keyword
+* public Keyword
 - class is visible to all classes everywhere.
 This means that any other class can access a public field or method.
 Further, other classes can modify public fields unless the field is declared as final
+
+* private keyword
+- is an access modifier used for attributes, methods and constructors, making them only accessible within the declared class
 */
 
 
