@@ -18,7 +18,7 @@ public class Streams {
         List<Integer> listOfIntegers= Arrays.asList(array); // OR List<Integer> listOfIntegers = new ArrayList<>(Arrays.asList(list));
         Function<Integer, Integer> timesTwo = (n) -> n * 2;
 
-        List<Integer> doubled = listOfIntegers // or listOfIntegers
+        List<Integer> doubled = listOfIntegers
             .stream()
             .map(timesTwo)
             .collect(Collectors.toList());
@@ -84,24 +84,28 @@ public class Streams {
 
     public static void main(String[] args) {
         Streams useStream = new Streams();
+
         Integer[] listOfIntegers = {1, 2, 3, 4, 5};
 
+        // Integer Examples
         List<Integer> doubled = useStream.doubleIntegersInList(listOfIntegers);
-
         List<Integer> evenList = useStream.retrieveEvenIntegers(listOfIntegers);
-
         Integer sum = useStream.sum(listOfIntegers);
 
         System.out.print("doubled: " + doubled + "\n");
         System.out.print("even: " + evenList + "\n");
         System.out.print("sum: " + sum + "\n");
-        System.out.println("item at index 0: " + evenList.get(0));
+        System.out.println("set index 0 to 10 and remove element at index 1 in even list");
+        evenList.set(0, 10);
+        evenList.remove(1);
+        System.out.println("even list item at index 0: " + evenList.get(0));
         System.out.println("even list size: " + evenList.size());
 
+        // String Examples
         String[] arrayOfStrings = {"Apple", "Facebook", "Google", "Netflix", "Tech"};
         String[] emptyArray = {};
-        List<String> moreThan4Letters = useStream.retrieveMoreThan4Letters(arrayOfStrings);
 
+        List<String> moreThan4Letters = useStream.retrieveMoreThan4Letters(arrayOfStrings);
         List<String> moreThan5Letters = useStream.filterByNumberOfCharacters(arrayOfStrings, 5);
 
         Optional<String> longestWord = useStream.findLongestWord(arrayOfStrings);
@@ -112,6 +116,9 @@ public class Streams {
         System.out.print("longest word: ");
 
         longestWord.ifPresent(System.out::println);
+
+        String longestWordResult = longestWord.get();
+        System.out.println("longestWordResult: " + longestWordResult);
 
         Consumer<String> log = (s) -> System.out.println(s);
 
