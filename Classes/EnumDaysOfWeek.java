@@ -6,7 +6,7 @@ enum Day {
 }
 
 public class EnumDaysOfWeek {
-    Day day; 
+    Day day;
 
     public EnumDaysOfWeek(Day day) {
         this.day = day;
@@ -14,10 +14,10 @@ public class EnumDaysOfWeek {
 
     public void tellItLikeItIs() {
         switch(day) {
-            case MONDAY: 
+            case MONDAY:
                 System.out.println("Monday Blues");
                 break;
-            case FRIDAY: 
+            case FRIDAY:
                 System.out.println("Happy Friday!");
                 break;
             default:

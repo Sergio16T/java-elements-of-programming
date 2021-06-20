@@ -23,11 +23,8 @@ public class CollectorsExamples {
     }
 
     public String stringJoiningExample() {
-        Stream<String> streamOfStrings = list
+        String joinedStrings = list
             .stream()
-            .filter(Streams.stringGreaterThan.apply(5));
-
-        String joinedStrings = streamOfStrings
             .collect(Collectors.joining(", ")); // joins items in steam into a string joined by separator
 
         return joinedStrings;
