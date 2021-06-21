@@ -22,19 +22,18 @@ public class WildCards {
         addBakedApplePieToList(bakedGoods);
     }
 
-    static void bake(Pie pie) {
+    public static void bake(Pie pie) {
         System.out.println("Baking a new " + pie.toString());
     }
 
-    static void printBakedGoods(List<? extends Pie> bakedGoodsList) {
+    public static void printBakedGoods(List<? extends Pie> bakedGoodsList) {
         System.out.println("\nprintBakedGoods\n\t");
         for (Pie bakedGood : bakedGoodsList) {
             bake(bakedGood);
         }
     }
 
-    //
-    static void addBakedApplePieToList(List<? super ApplePie> bakedGoods) {
+    public static void addBakedApplePieToList(List<? super ApplePie> bakedGoods) {
         bakedGoods.add(new ApplePie());
         System.out.println(bakedGoods);
     }
