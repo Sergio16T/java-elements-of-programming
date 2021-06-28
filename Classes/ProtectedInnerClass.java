@@ -14,7 +14,7 @@ public class ProtectedInnerClass {
 
     static public void main(String[] args) {
         ProtectedInnerClass c1 = new ProtectedInnerClass();
-	c1.displayStrings();
+	    c1.displayStrings();
     }
 
     protected class InnerClass1 {
